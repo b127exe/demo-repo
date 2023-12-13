@@ -1,0 +1,8 @@
+var marks = await _context.SubmissionRemarks.Where(sr => sr.SubmissionId == id)
+                .GroupBy(sr => sr.Marks)
+                .Select(group => new
+                {
+                    Mark = group.Key,
+                    Count = group.Count(),
+                }).ToListAsync();
+            return Json(marks);

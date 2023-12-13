@@ -1,0 +1,56 @@
+@model FineArt.Models.Posting
+@{
+	Layout = "_WebLayout";
+}
+<div class="loading loading-hidden"></div>
+<div class="modal fade" id="AddPostingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Post Your Art Design</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>                    
+            <div class="modal-body">
+                <form id="AddPostingForm" class="g-3 needs-validation" enctype="multipart/form-data" novalidate method="post">
+                    <div class="form-group my-3">
+                        <label asp-for="Title" class="form-label"></label>
+                        <input type="text" class="form-control" asp-for="Title" placeholder="Ex. Crystal Art" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>  
+                    <div class="form-group my-3">
+                        <label asp-for="Description" class="form-label"></label>
+                        <input type="text" class="form-control" asp-for="Description" placeholder="Description Here..." required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="form-group my-3">                        
+                        <label asp-for="Quotation" class="form-label"></label>
+                        <input type="text" class="form-control" asp-for="Quotation" placeholder="Quotation Here..." required>
+                        <div class="valid-feedback">        
+                            Looks good!                               
+                        </div>
+                    </div>
+
+                    <div class="form-group my-3">
+                        <div class="upload__box">
+                            <div class="upload__btn-box">
+                                <label class="upload__btn" asp-for="DesignImageFile">
+                                    <span>🎴  Design Upload</span>
+                                    <input type="file" asp-for="DesignImageFile" data-max_length="20" class="upload__inputfile">
+                                </label>
+                            </div>
+                            <div class="upload__img-wrap"></div>
+                        </div> 
+                    </div>
+                    
+                    <div class="d-grid my-3">
+                        <input type="submit" class="btn btn-warning" value="Post Design" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
