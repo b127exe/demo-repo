@@ -3,7 +3,7 @@ $("#txtSearch").keyup(function(){
 	$("tbody tr").each(function(){
 		if($(this).text().search(new RegExp(typeValue,"i")) < 0){
 			$(this).fadeOut();
-			console.log("hello");
+			console.log("world");
 		} 
 		else{
 			$(this).show();
